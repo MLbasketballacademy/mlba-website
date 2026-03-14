@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Moses Lake Basketball Academy</title>
+  <link rel="icon" href="images/mlba-logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+
+  <div class="page-banner">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you — players, parents, coaches, and sponsors welcome.</p>
+  </div>
+
+  <div class="section">
+    <div class="contact-grid">
+
+      <!-- Info Side -->
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p>
+          Whether you're interested in registering a player, inquiring about sponsorship, 
+          or just want to learn more about MLBA — reach out and we'll get back to you quickly.
+        </p>
+
+        <div class="contact-detail">
+          <span class="icon">📍</span>
+          <span>Moses Lake, Washington</span>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">✉️</span>
+          <span><a href="mailto:info@mlbasketballacademy.org" style="color:#0a6c74;">info@mlbasketballacademy.org</a></span>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">🌐</span>
+          <span>mlbasketballacademy.org</span>
+        </div>
+
+        <div style="margin-top:32px;background:#f2f4f6;border-radius:8px;padding:20px;">
+          <p style="font-weight:600;color:#0b2d4e;margin-bottom:8px;">Registration Interest?</p>
+          <p style="color:#6b7280;font-size:0.9rem;line-height:1.6;">
+            Let us know your child's grade and whether they're interested in the boys or girls program, 
+            and we'll follow up with tryout dates and registration details.
+          </p>
+        </div>
+      </div>
+
+      <!-- Form Side -->
+      <div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;color:#0b2d4e;margin-bottom:20px;text-transform:uppercase;">Send a Message</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">I'm interested in...</label>
+            <select id="subject">
+              <option value="">Select a topic</option>
+              <option value="register">Registering a Player</option>
+              <option value="tryouts">Tryout Information</option>
+              <option value="sponsor">Sponsorship Opportunity</option>
+              <option value="coach">Coaching Opportunity</option>
+              <option value="other">General Question</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell us a little about yourself or your question..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+  <div id="site-modal"></div>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
