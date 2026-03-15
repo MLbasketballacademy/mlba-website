@@ -49,9 +49,24 @@ header {
 }
 
 .header-brand img {
-  width: 56px;
-  height: 56px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .header-brand img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-brand img {
+    width: 100px;
+    height: 100px;
+  }
+}
 }
 
 .header-brand .brand-text h1 {
