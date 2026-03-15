@@ -527,16 +527,9 @@ footer a:hover { opacity: 0.8; }
   text-transform: uppercase;
 }
 .footer-links a:hover { color: var(--white); }
-
-/* ── Utility ── */
-.text-center { text-align: center; }
-.mt-8 { margin-top: 8px; }
-.mt-16 { margin-top: 16px; }
-.mt-32 { margin-top: 32px; }
-
-/* ── Responsive ── */
 @media (max-width: 768px) {
-  header { flex-direction: column; gap: 12px; padding: 16px 20px; }
+  header { flex-direction: column; gap: 12px; padding: 16px 20px; min-height: 140px; }
+  .header-brand img { width: 80px; height: 80px; }
   nav { padding: 0 10px; flex-wrap: wrap; justify-content: center; }
   nav a { padding: 10px 12px; font-size: 0.9rem; }
   .hero { flex-direction: column; padding: 50px 24px; gap: 30px; text-align: center; }
@@ -545,3 +538,16 @@ footer a:hover { opacity: 0.8; }
   .contact-grid { grid-template-columns: 1fr; }
   .section { padding: 40px 16px; }
 }
+
+@media (max-width: 480px) {
+  .header-brand img { width: 70px; height: 70px; }
+  .header-brand .brand-text h1 { font-size: 1.1rem; }
+}
+/* ── Utility ── */
+.text-center { text-align: center; }
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-32 { margin-top: 32px; }
+
+/* ── Responsive ── */
+
