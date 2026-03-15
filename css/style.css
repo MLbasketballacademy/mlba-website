@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap');
 /* FORCE LOGO SIZE */
+header {
+  padding: 12px 40px !important;
+  min-height: 100px !important;
+}
 .header-brand img {
-  width: 220px !important;
-  height: 220px !important;
+  width: 260px !important;
+  height: 260px !important;
   object-fit: contain !important;
 }
 /* ── CSS Variables ── */
