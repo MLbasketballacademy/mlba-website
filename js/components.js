@@ -63,6 +63,7 @@ const SHARED = {
       </p>
     </div>
   </div>
+  '
 };
 
 // Inject into page
