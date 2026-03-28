@@ -41,7 +41,28 @@ const SHARED = {
 </footer>`,
 
   modal: `
-
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+      <img class="modal-logo" src="images/mlba-logo.png" alt="MLBA">
+      <h2>Member Login</h2>
+      <p class="sub">Sign in to access team schedules, rosters, and coach resources.</p>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="you@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;margin-top:8px;">Sign In</button>
+      </form>
+      <p style="text-align:center;margin-top:16px;font-size:0.85rem;color:#6b7280;">
+        Need access? <a href="contact.html" style="color:#0a6c74;font-weight:600;">Contact us</a> to register.
+      </p>
+    </div>
+  </div>
 };
 
 // Inject into page
