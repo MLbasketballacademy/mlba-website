@@ -12,7 +12,7 @@ const SHARED = {
     </div>
   </div>
   <div class="header-actions">
-    <button class="btn-login" data-open-login>Member Login</button>
+    <a href="https://app.athletepilot.com/login" class="btn-login">Member Login</a>
   </div>
 </header>`,
 
