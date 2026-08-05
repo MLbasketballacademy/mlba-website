@@ -529,6 +529,21 @@ nav.site-nav { background: var(--teal); }
 .tier-features li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 800; }
 .sponsor-tier .btn { margin-top: auto; }
 
+/* Sponsor logo showcase (featured sponsors) */
+.sponsor-showcase { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+.sponsor-logo-card {
+  background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
+  border-top: 5px solid var(--gold); padding: 26px 30px 30px; text-align: center;
+  max-width: 560px; width: 100%;
+}
+.sponsor-tier-label {
+  display: inline-block; font-family: var(--font-head); text-transform: uppercase;
+  letter-spacing: 0.1em; font-size: 0.72rem; font-weight: 700; color: var(--navy);
+  background: var(--gold); padding: 4px 14px; border-radius: 999px; margin-bottom: 20px;
+}
+.sponsor-logo-card a { display: block; }
+.sponsor-logo-card img { width: 100%; max-width: 460px; height: auto; margin: 0 auto; }
+
 /* ============================================================
    Contact
    ============================================================ */
