@@ -96,9 +96,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 12px 14px;
+  flex-wrap: wrap; /* mobile: Member Login drops to its own row below the brand */
 }
-.header-brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.header-brand { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1 1 auto; max-width: calc(100% - 58px); }
 /* Crop the logo PNG's transparent padding (same treatment as the footer) so the
    mark fills its box tightly instead of floating in dead space. */
 .header-brand img { width: 92px; height: 66px; object-fit: cover; object-position: center 45%; flex-shrink: 0; }
@@ -118,7 +119,9 @@ header {
   font-weight: 600;
   margin-top: 4px;
 }
-.header-actions { display: flex; align-items: center; gap: 10px; }
+/* Member Login: full-width row on mobile (drops below the brand); auto width on desktop */
+.header-login { flex: 1 1 100%; order: 3; }
+.header-login .btn-login { display: inline-block; }
 
 .btn-login {
   background: var(--gold);
@@ -608,6 +611,10 @@ footer {
   .brand-text p { font-size: 0.7rem; }
   .header-brand img { width: 165px; height: 116px; }
 
+  /* Desktop: single row, Member Login sits at the right at content width */
+  .header-inner { flex-wrap: nowrap; }
+  .header-brand { max-width: none; flex: 0 1 auto; }
+  .header-login { flex: 0 0 auto; }
   /* Desktop nav: horizontal, always visible */
   .nav-toggle { display: none; }
   .site-nav .nav-inner { max-height: none !important; overflow: visible; }

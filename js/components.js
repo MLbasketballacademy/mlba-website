@@ -30,13 +30,13 @@ const SHARED = {
         <p>Develop · Compete · Belong</p>
       </span>
     </a>
-    <div class="header-actions">
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation"
+            aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="header-login">
       <button class="btn-login" type="button"
               onclick="window.location.href='${MEMBER_LOGIN_URL}'">Member Login</button>
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation"
-              aria-expanded="false" aria-controls="primary-nav">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </div>
 </header>`,
