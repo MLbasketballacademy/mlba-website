@@ -571,7 +571,11 @@ footer {
   padding: 46px var(--gutter) 30px;
 }
 .footer-inner { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 28px; }
-.footer-brand img { width: 276px; margin-bottom: 12px; }
+/* The logo PNG (512x1024) has ~32% transparent space above the mark and ~39%
+   below it. Setting width alone made the element 552px tall, so the visible mark
+   floated far below the column headings. object-fit: cover crops that baked-in
+   whitespace so the mark fills the box and its top lines up with Explore/Connect. */
+.footer-brand img { width: 230px; height: 160px; object-fit: cover; object-position: center 47%; margin-bottom: 12px; }
 .footer-brand strong { color: var(--white); display: block; font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.04em; font-size: 1.1rem; }
 .footer-brand p { font-size: 0.9rem; margin-top: 8px; max-width: 320px; }
 .footer-col h4 { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.08em; color: var(--white); font-size: 0.95rem; margin-bottom: 12px; }
