@@ -99,7 +99,9 @@ header {
   gap: 14px;
 }
 .header-brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.header-brand img { width: 100px; height: 100px; object-fit: contain; flex-shrink: 0; }
+/* Crop the logo PNG's transparent padding (same treatment as the footer) so the
+   mark fills its box tightly instead of floating in dead space. */
+.header-brand img { width: 92px; height: 66px; object-fit: cover; object-position: center 45%; flex-shrink: 0; }
 .brand-text h1 {
   font-family: var(--font-head);
   font-size: 1.15rem;
@@ -604,7 +606,7 @@ footer {
   :root { --gutter: 28px; }
   .brand-text h1 { font-size: 1.4rem; }
   .brand-text p { font-size: 0.7rem; }
-  .header-brand img { width: 276px; height: 276px; }
+  .header-brand img { width: 165px; height: 116px; }
 
   /* Desktop nav: horizontal, always visible */
   .nav-toggle { display: none; }
