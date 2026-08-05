@@ -4,89 +4,102 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Moses Lake Basketball Academy</title>
+  <meta name="description" content="Contact Moses Lake Basketball Academy — questions about the girls Academy, league teams, Academy + Team, MLBA Elite, Columbia Basin AAU team registration, tournaments, coaching, or sponsorship.">
   <link rel="icon" href="images/mlba-logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
   <div id="site-header"></div>
   <div id="site-nav"></div>
 
-  <div class="page-banner">
-    <h1>Contact Us</h1>
-    <p>We'd love to hear from you — players, parents, coaches, and sponsors welcome.</p>
-  </div>
-
-  <div class="section">
-    <div class="contact-grid">
-
-      <!-- Info Side -->
-      <div class="contact-info">
-        <h3>Get In Touch</h3>
-        <p>
-          Whether you're interested in registering a player, inquiring about sponsorship, 
-          or just want to learn more about MLBA — reach out and we'll get back to you quickly.
-        </p>
-
-        <div class="contact-detail">
-          <span class="icon">📍</span>
-          <span>Moses Lake, Washington</span>
-        </div>
-        <div class="contact-detail">
-          <span class="icon">✉️</span>
-          <span><a href="mailto:info@mlbasketballacademy.org" style="color:#0a6c74;">info@mlbasketballacademy.org</a></span>
-        </div>
-        <div class="contact-detail">
-          <span class="icon">🌐</span>
-          <span>mlbasketballacademy.org</span>
-        </div>
-
-        <div style="margin-top:32px;background:#f2f4f6;border-radius:8px;padding:20px;">
-          <p style="font-weight:600;color:#0b2d4e;margin-bottom:8px;">Ready to Start Training?</p>
-          <p style="color:#6b7280;font-size:0.9rem;line-height:1.6;">
-            Let us know your child's grade and whether they're interested in the boys or girls program,
-            and we'll follow up with skills assessment dates and registration details.
-          </p>
-        </div>
+  <main id="main">
+    <div class="page-banner">
+      <div class="container">
+        <span class="eyebrow">We're Here to Help</span>
+        <h1>Contact Us</h1>
+        <p>Players, parents, coaches, teams, and sponsors — reach out and we'll get back to you.</p>
       </div>
-
-      <!-- Form Side -->
-      <div>
-        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;color:#0b2d4e;margin-bottom:20px;text-transform:uppercase;">Send a Message</h3>
-        <form id="contactForm">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="Jane Smith" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="you@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="subject">I'm interested in...</label>
-            <select id="subject">
-              <option value="">Select a topic</option>
-              <option value="register">Enrolling a Player</option>
-              <option value="tryouts">Skills Assessment Information</option>
-              <option value="sponsor">Sponsorship Opportunity</option>
-              <option value="coach">Coaching Opportunity</option>
-              <option value="other">General Question</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell us a little about yourself or your question..."></textarea>
-          </div>
-          <button type="submit" class="btn-primary" style="width:100%;">Send Message</button>
-        </form>
-      </div>
-
     </div>
-  </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Info -->
+          <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <p>Whether you're exploring the Academy, looking for a league team, aiming for MLBA Elite, registering a team for Columbia Basin AAU, or partnering as a sponsor — we'd love to hear from you.</p>
+
+            <div class="contact-detail">
+              <span class="icon" aria-hidden="true">📍</span>
+              <span>Moses Lake, Washington</span>
+            </div>
+            <div class="contact-detail">
+              <span class="icon" aria-hidden="true">✉️</span>
+              <a href="mailto:info@mlbasketballacademy.org">info@mlbasketballacademy.org</a>
+            </div>
+            <div class="contact-detail">
+              <span class="icon" aria-hidden="true">🌐</span>
+              <span>mlbasketballacademy.org</span>
+            </div>
+
+            <div style="margin-top:28px;background:var(--gray-lt);border-radius:12px;padding:20px;">
+              <p style="font-weight:700;color:var(--navy);margin-bottom:8px;">Ready to register?</p>
+              <p style="color:var(--gray);font-size:0.94rem;margin-bottom:14px;">Player registration runs through our AthletePilot system.</p>
+              <button type="button" class="btn btn-primary" onclick="window.AthletePilot && window.AthletePilot.open();">Register a Player</button>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div>
+            <h3 style="font-family:var(--font-head);font-size:1.35rem;font-weight:700;color:var(--navy);margin-bottom:18px;text-transform:uppercase;">Send a Message</h3>
+
+            <div class="form-notice" role="note">
+              <strong>Note:</strong> This form is not yet connected to a live server. Submitting it will open your own email app with the details pre-filled so you can send it to us. You can also email
+              <a href="mailto:info@mlbasketballacademy.org">info@mlbasketballacademy.org</a> directly.
+            </div>
+
+            <form id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="Jane Smith" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="you@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="subject">I'm contacting you about…</label>
+                <select id="subject" name="subject">
+                  <option value="">Select a topic</option>
+                  <option>Girls Academy</option>
+                  <option>Girls League Team</option>
+                  <option>Academy + Team</option>
+                  <option>MLBA Elite</option>
+                  <option>Columbia Basin AAU team registration</option>
+                  <option>Tournament registration</option>
+                  <option>Coaching</option>
+                  <option>Sponsorship</option>
+                  <option>General question</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us a little about your athlete, team, or question…"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;">Compose Email</button>
+              <p id="formStatus" role="status" aria-live="polite" hidden
+                 style="margin-top:14px;color:var(--teal);font-size:0.92rem;"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <div id="site-footer"></div>
-  <div id="site-modal"></div>
+
   <script src="js/components.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://athletepilot.com/widget.js" data-club-id="mlba_1773697477281"></script>
 </body>
 </html>

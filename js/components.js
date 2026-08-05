@@ -1,73 +1,96 @@
 // ── Shared Components ──
-// This file injects the header, nav, footer, and login modal into every page.
+// Injects the header, navigation, and footer into every page so there is a
+// single source of truth for the site chrome. The Member Login button links to
+// the AthletePilot production login; the AthletePilot registration widget is
+// loaded per-page via the widget script tag.
+
+const NAV_LINKS = [
+  { href: 'index.html',              label: 'Home' },
+  { href: 'pathways.html',           label: 'Player Pathways' },
+  { href: 'academy.html',            label: 'Academy' },
+  { href: 'elite.html',              label: 'MLBA Elite' },
+  { href: 'columbia-basin-aau.html', label: 'Columbia Basin AAU' },
+  { href: 'leagues-tournaments.html',label: 'Leagues & Tournaments' },
+  { href: 'sponsors.html',           label: 'Sponsors' },
+  { href: 'about.html',              label: 'About' },
+  { href: 'contact.html',            label: 'Contact' },
+];
+
+const MEMBER_LOGIN_URL = 'https://www.athletepilot.com/login';
 
 const SHARED = {
   header: `
+<a href="#main" class="skip-link">Skip to content</a>
 <header>
-  <div class="header-brand">
-    <img src="images/mlba-logo.png" alt="MLBA Logo">
-    <div class="brand-text">
-      <h1>Moses Lake Basketball Academy</h1>
-      <p>Developing Athletes · Building Leaders</p>
+  <div class="header-inner">
+    <a class="header-brand" href="index.html" aria-label="MLBA home">
+      <img src="images/mlba-logo.png" alt="Moses Lake Basketball Academy logo">
+      <span class="brand-text">
+        <h1>Moses Lake Basketball Academy</h1>
+        <p>Develop · Compete · Belong</p>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation"
+            aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="header-login">
+      <button class="btn-login" type="button"
+              onclick="window.location.href='${MEMBER_LOGIN_URL}'">Member Login</button>
     </div>
-  </div>
-  <div class="header-actions">
-    <button class="btn-login" onclick="window.location.href='https://www.athletepilot.com/login'">Member Login</button>
   </div>
 </header>`,
 
   nav: `
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="teams.html">Teams</a>
-  <a href="sponsors.html">Become A Sponsor</a>
-  <a href="contact.html">Contact</a>
+<nav class="site-nav" id="primary-nav" aria-label="Primary">
+  <div class="nav-inner">
+    <ul>
+      ${NAV_LINKS.map(l => `<li><a href="${l.href}">${l.label}</a></li>`).join('')}
+    </ul>
+  </div>
 </nav>`,
 
   footer: `
 <footer>
-  <img class="footer-logo" src="images/mlba-logo.png" alt="MLBA">
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="teams.html">Teams</a>
-    <a href="sponsors.html">Sponsors</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <p><strong>Moses Lake Basketball Academy</strong></p>
-  <p>Moses Lake, WA &nbsp;·&nbsp; <a href="mailto:info@mlbasketballacademy.org">info@mlbasketballacademy.org</a></p>
-  <p style="margin-top:16px;font-size:0.8rem;opacity:0.5;">© 2026 Moses Lake Basketball Academy. All rights reserved.</p>
-</footer>`,
-
-  modal: `
-  <div class="modal-overlay" id="loginModal">
-    <div class="modal">
-      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
-      <img class="modal-logo" src="images/mlba-logo.png" alt="MLBA">
-      <h2>Member Login</h2>
-      <p class="sub">Sign in to access team schedules, rosters, and coach resources.</p>
-      <form id="loginForm">
-        <div class="form-group">
-          <label for="loginEmail">Email</label>
-          <input type="email" id="loginEmail" placeholder="you@email.com" required>
-        </div>
-        <div class="form-group">
-          <label for="loginPassword">Password</label>
-          <input type="password" id="loginPassword" placeholder="••••••••" required>
-        </div>
-        <button type="submit" class="btn-primary" style="width:100%;margin-top:8px;">Sign In</button>
-      </form>
-      <p style="text-align:center;margin-top:16px;font-size:0.85rem;color:#6b7280;">
-        Need access? <a href="contact.html" style="color:#0a6c74;font-weight:600;">Contact us</a> to register.
-      </p>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/mlba-logo.png" alt="Moses Lake Basketball Academy logo">
+      <strong>Moses Lake Basketball Academy</strong>
+      <p>Player development, competitive teams, and the home of Columbia Basin AAU — serving Moses Lake and the surrounding communities.</p>
+    </div>
+    <nav class="footer-col" aria-label="Footer">
+      <h4>Explore</h4>
+      <a href="pathways.html">Player Pathways</a>
+      <a href="academy.html">Academy</a>
+      <a href="elite.html">MLBA Elite</a>
+      <a href="columbia-basin-aau.html">Columbia Basin AAU</a>
+      <a href="leagues-tournaments.html">Leagues &amp; Tournaments</a>
+    </nav>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="sponsors.html">Become a Sponsor</a>
+      <a href="about.html">About MLBA</a>
+      <a href="contact.html">Contact</a>
+      <div class="contact-detail" style="margin-top:8px;">
+        <span class="icon" aria-hidden="true">✉️</span>
+        <a class="mail" href="mailto:info@mlbasketballacademy.org">info@mlbasketballacademy.org</a>
+      </div>
+      <div class="contact-detail">
+        <span class="icon" aria-hidden="true">📍</span>
+        <span>Moses Lake, Washington</span>
+      </div>
     </div>
   </div>
-  `
+  <div class="footer-bottom">
+    © <span id="footer-year">2026</span> Moses Lake Basketball Academy. All rights reserved.
+  </div>
+</footer>`
 };
 
-// Inject into page
-document.getElementById('site-header').innerHTML = SHARED.header;
-document.getElementById('site-nav').innerHTML    = SHARED.nav;
-document.getElementById('site-footer').innerHTML = SHARED.footer;
-document.getElementById('site-modal').innerHTML  = SHARED.modal;
+// Inject chrome
+const headerMount = document.getElementById('site-header');
+const navMount    = document.getElementById('site-nav');
+const footerMount = document.getElementById('site-footer');
+if (headerMount) headerMount.innerHTML = SHARED.header;
+if (navMount)    navMount.innerHTML    = SHARED.nav;
+if (footerMount) footerMount.innerHTML = SHARED.footer;
