@@ -383,6 +383,62 @@ nav.site-nav { background: var(--teal); }
   font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 999px;
   background: var(--gold); color: var(--navy); margin-top: 10px;
 }
+.pc-facts {
+  margin-top: 10px; font-size: 0.82rem; line-height: 1.5; color: rgba(255,255,255,0.82);
+}
+
+/* ============================================================
+   Pathway subsections (Girls Programs / Boys Programs)
+   ============================================================ */
+.page-banner.page-banner-compact .container { padding-top: 26px; padding-bottom: 24px; }
+.section.pathways-lineup { padding-top: 20px; }
+@media (min-width: 1300px) {
+  .section.pathways-lineup .container { max-width: 1280px; }
+}
+
+.pathway-subsection { margin-bottom: 36px; }
+.pathway-subsection:last-child { margin-bottom: 0; }
+.pathway-subsection .section-head { margin-bottom: 14px; }
+.pathway-subsection .section-title { font-size: clamp(1.5rem, 3.4vw, 1.9rem); }
+.pathway-subsection .section-subtitle { font-size: 0.9rem; margin-top: 6px; }
+.eyebrow-navy { color: var(--navy); }
+.section-title.underline-teal::after { background: var(--teal); }
+
+/* Compact card treatment scoped to the pathways lineup grid only */
+.pathway-subsection .pc-head { padding: 14px 18px; }
+.pathway-subsection .pc-head h3 { font-size: 1.2rem; }
+.pathway-subsection .pc-kicker { font-size: 0.64rem; margin-bottom: 3px; }
+.pathway-subsection .pc-price { font-size: 0.9rem; margin-top: 2px; }
+.pathway-subsection .pc-fee-note { font-size: 0.65rem; font-weight: 400; color: rgba(255,255,255,0.75); }
+.pathway-subsection .pc-facts { font-size: 0.74rem; margin-top: 5px; line-height: 1.35; }
+.pathway-subsection .pc-body { padding: 14px 18px; }
+.pathway-subsection .pc-list li { padding: 4px 0 4px 20px; font-size: 0.83rem; line-height: 1.3; }
+.pathway-subsection .pc-list { margin-bottom: 10px; }
+.pathway-subsection .badge-pill { font-size: 0.62rem; padding: 3px 9px; margin-top: 4px; }
+.pathway-subsection .pc-body .btn { padding: 8px 16px; font-size: 0.88rem; }
+
+/* Compact single-option card (used when a subsection has only one option) */
+.pathway-single {
+  display: flex; flex-wrap: wrap;
+  background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
+  overflow: hidden; border: 1px solid var(--border);
+}
+.pathway-single .pc-head {
+  flex: 1 1 260px; display: flex; flex-direction: column; justify-content: center;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: var(--white);
+  border-bottom: none; border-right: 3px solid var(--gold);
+}
+.pathway-single .pc-body {
+  flex: 2 1 380px; display: flex; flex-direction: column; justify-content: center;
+}
+.pathway-single .pc-list { display: flex; flex-wrap: wrap; gap: 2px 28px; margin-bottom: 18px; }
+.pathway-single .pc-list li { flex: 1 1 260px; border-bottom: none; padding: 4px 0 4px 24px; }
+.pathway-single .pc-body .btn { margin-top: 6px; align-self: flex-start; }
+@media (max-width: 619px) {
+  .pathway-single { flex-direction: column; }
+  .pathway-single .pc-head { border-right: none; border-bottom: 3px solid var(--gold); }
+}
 
 /* ============================================================
    Steps / pathway flow
