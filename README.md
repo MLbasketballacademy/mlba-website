@@ -48,10 +48,16 @@ mlba-website/
 
 ## Integrations
 
-- **AthletePilot registration widget** — loaded via
-  `<script src="https://athletepilot.com/widget.js" data-club-id="mlba_1773697477281"></script>`
-  on pages with a registration call-to-action (Home, Player Pathways, Academy, Contact).
-  Register buttons call `window.AthletePilot.open()`. **Do not change the `data-club-id`.**
+- **AthletePilot registration** — every Register call-to-action is a plain link (not a script or
+  click handler) to a specific AthletePilot offering-registration URL:
+  - General chooser: `https://www.athletepilot.com/register/mlba_1773697477281/offerings`
+  - Academy only: `https://www.athletepilot.com/register/mlba_1773697477281/offerings/cmtbly5ib03wdnc2kz0k5lbtm`
+  - Academy + Team: `https://www.athletepilot.com/register/mlba_1773697477281/offerings/cmtblzw0o03wfnc2kp4774ybh`
+
+  The site previously loaded an AthletePilot widget script (`widget.js`) and called
+  `window.AthletePilot.open()` from Register buttons; that global was never actually provided by
+  the script, so every Register button was broken. Both have been removed in favor of the plain
+  links above. **Do not change the club id (`mlba_1773697477281`) or the offering ids.**
 - **Member Login** — the header button links to the AthletePilot production login at
   `https://www.athletepilot.com/login`.
 

@@ -1,8 +1,8 @@
 // ── Shared Components ──
 // Injects the header, navigation, and footer into every page so there is a
 // single source of truth for the site chrome. The Member Login button links to
-// the AthletePilot production login; the AthletePilot registration widget is
-// loaded per-page via the widget script tag.
+// the AthletePilot production login; Register buttons are plain links to
+// specific AthletePilot offering-registration URLs (see README.md).
 
 const NAV_LINKS = [
   { href: 'index.html',              label: 'Home' },
