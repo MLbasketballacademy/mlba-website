@@ -713,3 +713,33 @@ footer {
 @media (min-width: 1100px) {
   .feature-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ============================================================
+   Team registration page (Zoho Forms embed)
+   ============================================================ */
+.reg-intro { max-width: 820px; margin: 0 auto; }
+.reg-intro-card {
+  background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
+  border-top: 4px solid var(--teal); padding: 26px 24px;
+}
+.reg-intro-card h2 {
+  font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; text-transform: uppercase;
+  color: var(--navy); margin-bottom: 12px; letter-spacing: 0.01em;
+}
+.reg-intro-card .pc-list { margin-bottom: 0; }
+.reg-intro-card .pc-list li { color: var(--text); overflow-wrap: anywhere; } /* long email address must wrap on 320px phones */
+.reg-intro-card a { color: var(--teal); font-weight: 600; text-decoration: underline; }
+
+/* The Zoho script sets the iframe's own height and resizes it to fit the form, so the
+   page scrolls normally. Do not set a height or overflow here. */
+.zf-embed {
+  max-width: 860px; margin: 0 auto; background: var(--surface);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 8px;
+}
+.zf-embed iframe { display: block; max-width: 100%; margin: 0 auto; }
+.zf-fallback { padding: 18px; color: var(--gray); overflow-wrap: anywhere; }
+.zf-fallback a { color: var(--teal); font-weight: 600; text-decoration: underline; }
+@media (min-width: 620px) {
+  .zf-embed { padding: 20px; }
+  .reg-intro-card { padding: 30px 32px; }
+}

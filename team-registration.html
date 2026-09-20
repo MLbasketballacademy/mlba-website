@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Registration — Moses Lake Basketball Academy</title>
+  <meta name="description" content="Register your team for Columbia Basin AAU league play with Moses Lake Basketball Academy. Submit one registration per team; MLBA reviews every registration before any payment is requested.">
+  <link rel="icon" href="images/mlba-logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <div id="site-nav"></div>
+
+  <main id="main">
+    <div class="page-banner">
+      <div class="container">
+        <span class="eyebrow">Compete in the Columbia Basin</span>
+        <h1>Team Registration</h1>
+        <p>Register your team for MLBA league play. MLBA reviews every registration before any payment is requested.</p>
+      </div>
+    </div>
+
+    <!-- Before you begin -->
+    <section class="section">
+      <div class="container">
+        <div class="reg-intro">
+          <div class="reg-intro-card">
+            <h2>Before You Begin</h2>
+            <ul class="pc-list">
+              <li>Submit <strong>one registration per team</strong>.</li>
+              <li>MLBA reviews every registration <strong>before payment</strong>.</li>
+              <li>Submitting does <strong>not guarantee acceptance</strong>.</li>
+              <li><strong>No payment is collected on this form.</strong></li>
+              <li>Approved teams receive a separate payment request.</li>
+              <li>Need to correct your roster later? Email <a href="mailto:league@mlbasketballacademy.org">league@mlbasketballacademy.org</a> with your team name.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration form (Zoho Forms embed) -->
+    <section class="section section--alt" id="registration-form" aria-labelledby="registration-form-title">
+      <div class="container">
+        <div class="section-head text-center">
+          <span class="eyebrow">League Team Registration</span>
+          <h2 class="section-title underline" id="registration-form-title">Register Your Team</h2>
+          <p class="section-subtitle">Complete the form below. Your registration goes to MLBA for review.</p>
+        </div>
+
+        <div class="zf-embed">
+          <noscript>
+            <p class="zf-fallback">This registration form needs JavaScript. Please enable it, or email
+              <a href="mailto:league@mlbasketballacademy.org">league@mlbasketballacademy.org</a> and we will help you register your team.</p>
+          </noscript>
+<div id="zf_div_lkV4vbwO12FQewxTi15PYw1mpE2ptPaIqj8RUGR-a8A">
+</div>
+<script type="text/javascript">
+(function() {
+	try{
+		var f = document.createElement("iframe");
+
+			var ifrmSrc = 'https://forms.zohopublic.com/dandersonmlbasketb1/form/MLBATeamRegistrationTest/formperma/lkV4vbwO12FQewxTi15PYw1mpE2ptPaIqj8RUGR-a8A?zf_rszfm=1';
+
+
+        try{
+			if ( typeof ZFAdvLead != "undefined" && typeof zfutm_zfAdvLead != "undefined" ) {
+				for( var prmIdx = 0 ; prmIdx < ZFAdvLead.utmPNameArr.length ; prmIdx ++ ) {
+				    var utmPm = ZFAdvLead.utmPNameArr[ prmIdx ];
+				    utmPm = ( ZFAdvLead.isSameDomian && ( ZFAdvLead.utmcustPNameArr.indexOf(utmPm) == -1 ) ) ? "zf_" + utmPm : utmPm;
+				    var utmVal = zfutm_zfAdvLead.zfautm_gC_enc( ZFAdvLead.utmPNameArr[ prmIdx ] );
+				    if ( typeof utmVal !== "undefined" ) {
+				      if ( utmVal != "" ) {
+				        if(ifrmSrc.indexOf('?') > 0){
+				             ifrmSrc = ifrmSrc+'&'+utmPm+'='+utmVal;
+				        }else{
+				            ifrmSrc = ifrmSrc+'?'+utmPm+'='+utmVal;
+				        }
+				      }
+				    }
+				}
+			}
+			if ( typeof ZFLead !== "undefined" && typeof zfutm_zfLead !== "undefined" ) {
+				for( var prmIdx = 0 ; prmIdx < ZFLead.utmPNameArr.length ; prmIdx ++ ) {
+		        	var utmPm = ZFLead.utmPNameArr[ prmIdx ];
+		        	var utmVal = zfutm_zfLead.zfutm_gC_enc( ZFLead.utmPNameArr[ prmIdx ] );
+			        if ( typeof utmVal !== "undefined" ) {
+			          if ( utmVal != "" ){
+			            if(ifrmSrc.indexOf('?') > 0){
+			              ifrmSrc = ifrmSrc+'&'+utmPm+'='+utmVal;//No I18N
+			            }else{
+			              ifrmSrc = ifrmSrc+'?'+utmPm+'='+utmVal;//No I18N
+			            }
+			          }
+			        }
+		      	}
+			}
+			if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
+            var rfr = window.location.href;
+
+            try {
+                rfr = window.self !== window.top ?
+                    window.top.location.href :
+                    (/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
+            } catch (e) {}
+
+            if (rfr && rfr !== "") {
+                if (rfr.length > 1800) {
+                    var queryIndex = rfr.indexOf('?');
+                    if (queryIndex > -1) {
+                        rfr = rfr.substring(0, queryIndex);
+                    }
+                    if (rfr.length > 1800) {
+                        rfr = rfr.substring(0, 1800);
+                    }
+                }
+                ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
+            }
+        }
+		}catch(e){}
+
+
+		f.src = ifrmSrc;
+		f.style.border="none";
+		f.style.height="8850px";
+		f.style.width="99%";
+		f.style.transition="all 0.5s ease";
+		f.setAttribute("aria-label", 'MLBA League Team Registration');
+
+		var d = document.getElementById("zf_div_lkV4vbwO12FQewxTi15PYw1mpE2ptPaIqj8RUGR-a8A");
+		d.appendChild(f);
+		window.addEventListener('message', function (){
+			var evntData = event.data;
+			if( evntData && evntData.constructor == String ){
+				var zf_ifrm_data = evntData.split("|");
+				if ( zf_ifrm_data.length == 2 || zf_ifrm_data.length == 3 ) {
+					var zf_perma = zf_ifrm_data[0];
+					var zf_ifrm_ht_nw = ( parseInt(zf_ifrm_data[1], 10) + 15 ) + "px";
+					var iframe = document.getElementById("zf_div_lkV4vbwO12FQewxTi15PYw1mpE2ptPaIqj8RUGR-a8A").getElementsByTagName("iframe")[0];
+					if ( (iframe.src).indexOf('formperma') > 0 && (iframe.src).indexOf(zf_perma) > 0 ) {
+						var prevIframeHeight = iframe.style.height;
+						var zf_tout = false;
+						if( zf_ifrm_data.length == 3 ) {
+						    iframe.scrollIntoView();
+						    zf_tout = true;
+						}
+
+						if ( prevIframeHeight != zf_ifrm_ht_nw ) {
+							if( zf_tout ) {
+							    setTimeout(function(){
+							        iframe.style.height = zf_ifrm_ht_nw;
+							    },500);
+							} else {
+							    iframe.style.height = zf_ifrm_ht_nw;
+							}
+						}
+					}
+				}
+			}
+		}, false);
+    }catch(e){}
+
+
+})();
+</script>
+<script>
+/* Zoho reports the form's height without its footer band, which leaves a nested scrollbar
+   inside the iframe (up to about 175px on the narrowest phones, none on wide desktops). Add a width-based buffer
+   to whatever height Zoho sets so the page itself scrolls. The Zoho embed above is unmodified. */
+(function () {
+  var mount = document.getElementById('zf_div_lkV4vbwO12FQewxTi15PYw1mpE2ptPaIqj8RUGR-a8A');
+  var frame = mount && mount.getElementsByTagName('iframe')[0];
+  if (!frame || !window.MutationObserver) return;
+  var lastSet = '';
+  new MutationObserver(function () {
+    if (frame.style.height === lastSet) return;
+    var h = parseFloat(frame.style.height);
+    if (!h) return;
+    var w = frame.getBoundingClientRect().width;
+    var pad = w < 330 ? 240 : (w < 560 ? 180 : (w < 760 ? 100 : 30));
+    lastSet = (h + pad) + 'px';
+    frame.style.height = lastSet;
+  }).observe(frame, { attributes: true, attributeFilter: ['style'] });
+})();
+</script>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
