@@ -22,6 +22,7 @@ Static site (HTML, CSS, vanilla JS) hosted on **GitHub Pages**. No build step.
 | `sponsors.html` | Sponsors |
 | `about.html` | About |
 | `contact.html` | Contact |
+| `team-registration.html` | Team Registration (embedded Zoho form; not in the main nav) |
 
 ## Folder structure
 
@@ -36,6 +37,7 @@ mlba-website/
 ├── sponsors.html
 ├── about.html
 ├── contact.html
+├── team-registration.html
 ├── CNAME                  ← Custom domain for GitHub Pages (do not remove)
 ├── css/
 │   └── style.css          ← Design system + all page styles
@@ -60,6 +62,13 @@ mlba-website/
   links above. **Do not change the club id (`mlba_1773697477281`) or the offering ids.**
 - **Member Login** — the header button links to the AthletePilot production login at
   `https://www.athletepilot.com/login`.
+- **Team registration (Zoho Forms)** — `team-registration.html` embeds an MLBA-owned Zoho form
+  with Zoho's supplied embed script. The form URL is public embed configuration, not a secret.
+  Zoho resizes the iframe to fit the form so the page scrolls normally. The form collects
+  registration details only: **no payment is taken**, MLBA reviews each submission, and approved
+  teams receive a separate payment request. The "Start Team Registration" button on
+  `leagues-tournaments.html` links here. Roster corrections go to
+  `league@mlbasketballacademy.org`. Change the form itself in Zoho, not in this repo.
 
 ## Hosting
 
