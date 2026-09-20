@@ -22,7 +22,7 @@ Static site (HTML, CSS, vanilla JS) hosted on **GitHub Pages**. No build step.
 | `sponsors.html` | Sponsors |
 | `about.html` | About |
 | `contact.html` | Contact |
-| `team-registration.html` | Team Registration (embedded Zoho form; not in the main nav) |
+| `team-registration.html` | Outside Team Registration (embedded Zoho form; teams outside Moses Lake only; not in the main nav) |
 
 ## Folder structure
 
@@ -66,9 +66,15 @@ mlba-website/
   with Zoho's supplied embed script. The form URL is public embed configuration, not a secret.
   Zoho resizes the iframe to fit the form so the page scrolls normally. The form collects
   registration details only: **no payment is taken**, MLBA reviews each submission, and approved
-  teams receive a separate payment request. The "Start Team Registration" button on
+  teams receive a separate payment request. The form is **only for teams outside Moses Lake**
+  (Fall 2026 deadline: October 7, 2026); Moses Lake families register each player individually
+  through an MLBA player offering (`pathways.html`). The "Start Outside Team Registration" button on
   `leagues-tournaments.html` links here. Roster corrections go to
   `league@mlbasketballacademy.org`. Change the form itself in Zoho, not in this repo.
+- **League Communities** — `leagues-tournaments.html` lists the communities represented in league
+  play as text-only cards (no logos: written authorization for official school logos is pending).
+  Add a community by copying one `.community-card` `<li>`; add an approved image later with an
+  `<img class="community-logo">` before the name. Never add school or mascot images without written permission.
 
 ## Hosting
 

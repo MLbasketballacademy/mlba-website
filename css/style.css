@@ -743,3 +743,72 @@ footer {
   .zf-embed { padding: 20px; }
   .reg-intro-card { padding: 30px 32px; }
 }
+
+/* ============================================================
+   Outside team registration + League Communities (scoped to this update)
+   ============================================================ */
+
+/* Fall 2026 deadline callout inside the page banner — gold on navy, an announcement not an error */
+.page-banner .reg-deadline {
+  display: inline-block; max-width: 100%; margin-top: 20px; padding: 12px 18px;
+  border: 1px solid rgba(245,166,35,0.6); border-radius: var(--radius-sm);
+  background: rgba(245,166,35,0.14); color: var(--white); line-height: 1.35;
+}
+.reg-deadline-label {
+  font-family: var(--font-head); font-size: 0.95rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em; overflow-wrap: anywhere;
+}
+.reg-deadline-date {
+  font-family: var(--font-head); font-size: 1.35rem; font-weight: 800; letter-spacing: 0.02em;
+  color: var(--gold); white-space: nowrap;
+}
+
+/* Moses Lake family pointer at the end of the Before You Begin card */
+.reg-family-cta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px;
+  margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border);
+}
+.reg-family-cta p { flex: 1 1 220px; color: var(--navy); font-weight: 600; }
+.reg-intro-card .reg-family-cta a.btn-ghost { color: var(--navy); font-weight: 700; text-decoration: none; }
+.reg-intro-card .reg-family-cta a.btn-ghost:hover { color: var(--teal); }
+
+/* Short note above a pathway card's button (Leagues & Tournaments) */
+.pc-note { margin-bottom: 16px; color: var(--gray); font-size: 0.9rem; line-height: 1.5; }
+.pc-note a { color: var(--teal); font-weight: 600; text-decoration: underline; }
+
+/* League Communities: equal-size, centered, wrapping cards for any number of communities
+   (1 column on phones, 2 from 480px, 3 from 900px; a short last row stays centered). */
+.community-grid {
+  --community-cols: 1; --community-gap: 14px;
+  list-style: none; margin: 0 auto; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--community-gap);
+}
+.community-card {
+  flex: 0 0 calc((100% - (var(--community-cols) - 1) * var(--community-gap)) / var(--community-cols));
+  min-width: 0; min-height: 96px; padding: 20px 16px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  text-align: center; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.community-name {
+  font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; line-height: 1.15;
+  text-transform: uppercase; letter-spacing: 0.02em; color: var(--navy); overflow-wrap: anywhere;
+}
+.community-card:not(.community-card--more) .community-name::after {
+  content: ''; display: block; width: 32px; height: 3px; margin: 10px auto 0;
+  background: var(--gold); border-radius: 2px;
+}
+.community-card--more { background: var(--surface-2); border-style: dashed; box-shadow: none; }
+.community-card--more .community-name { color: var(--gray); }
+/* Reserved for a future, officially authorized image placed before the name. Nothing renders until then. */
+.community-card .community-logo { width: auto; max-width: 100%; max-height: 72px; object-fit: contain; }
+.community-note {
+  max-width: 620px; margin: 22px auto 0; text-align: center;
+  color: var(--gray); font-size: 0.85rem; line-height: 1.5;
+}
+@media (min-width: 480px) {
+  .community-grid { --community-cols: 2; }
+}
+@media (min-width: 900px) {
+  .community-grid { --community-cols: 3; --community-gap: 20px; }
+}
