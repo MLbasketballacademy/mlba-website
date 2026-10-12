@@ -23,6 +23,7 @@ Static site (HTML, CSS, vanilla JS) hosted on **GitHub Pages**. No build step.
 | `about.html` | About |
 | `contact.html` | Contact |
 | `team-registration.html` | Outside Team Registration (embedded Zoho form; teams outside Moses Lake only; not in the main nav) |
+| `fall-league-schedule.html` | Fall 2026 League Schedule (master-schedule PDF viewer + download; not in the main nav) |
 
 ## Folder structure
 
@@ -38,12 +39,15 @@ mlba-website/
 ├── about.html
 ├── contact.html
 ├── team-registration.html
+├── fall-league-schedule.html
 ├── CNAME                  ← Custom domain for GitHub Pages (do not remove)
 ├── css/
 │   └── style.css          ← Design system + all page styles
 ├── js/
 │   ├── components.js      ← Shared header / nav / footer (single source of truth)
 │   └── main.js            ← Active nav, mobile menu, contact-form mailto handoff
+├── files/
+│   └── 2026-fall-league/ ← Published league schedule PDFs
 └── images/
     └── mlba-logo.png      ← MLBA logo (also used as favicon)
 ```

@@ -812,3 +812,27 @@ footer {
 @media (min-width: 900px) {
   .community-grid { --community-cols: 3; --community-gap: 20px; }
 }
+
+/* ============================================================
+   Fall 2026 league schedule page (embedded PDF + download)
+   ============================================================ */
+.schedule-actions { margin-top: 22px; }
+.pdf-viewer {
+  max-width: 980px; margin: 0 auto; background: var(--surface);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 8px;
+}
+/* Phones rarely render an embedded PDF; the fallback text and the buttons above cover that case. */
+.pdf-viewer object { display: block; width: 100%; height: 80vh; min-height: 520px; border: 0; }
+.pdf-fallback { padding: 18px; color: var(--gray); overflow-wrap: anywhere; }
+.pdf-fallback a { color: var(--teal); font-weight: 600; text-decoration: underline; }
+/* Many phone browsers (e.g., Android Chrome) draw an embedded PDF as a blank box, so phones get a pointer to the
+   buttons instead of the viewer. */
+.pdf-mobile-note {
+  max-width: 620px; margin: 0 auto; padding: 18px 20px; text-align: center; color: var(--text);
+  background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.pdf-viewer { display: none; }
+@media (min-width: 760px) {
+  .pdf-mobile-note { display: none; }
+  .pdf-viewer { display: block; padding: 16px; }
+}
