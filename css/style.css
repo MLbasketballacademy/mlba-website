@@ -812,3 +812,80 @@ footer {
 @media (min-width: 900px) {
   .community-grid { --community-cols: 3; --community-gap: 20px; }
 }
+
+/* ============================================================
+   Fall 2026 league schedule page (schedule in HTML + date/team filters)
+   ============================================================ */
+.schedule-actions { margin-top: 22px; }
+/* Leagues & Tournaments: links to the schedule page */
+.event-body .event-link a { color: var(--teal); font-weight: 600; text-decoration: underline; }
+.schedule-link-row { margin-top: 26px; }
+.schedule-pdf-note { margin-top: 8px; color: var(--gray); font-size: 0.88rem; }
+
+.sched-filters {
+  max-width: 980px; margin: 0 auto 22px; padding: 16px; display: grid; gap: 12px;
+  background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.sched-filters[hidden] { display: none; }
+.sched-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.sched-field label {
+  font-family: var(--font-head); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; font-size: 0.85rem; color: var(--navy);
+}
+.sched-field select {
+  width: 100%; min-width: 0; padding: 11px 12px; font: inherit; font-size: 1rem; color: var(--text);
+  background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius-sm);
+}
+.sched-field select:focus { outline: none; border-color: var(--teal); }
+.sched-reset { justify-self: start; }
+.sched-count { color: var(--gray); font-size: 0.92rem; }
+
+.sched { max-width: 980px; margin: 0 auto; }
+.sched-day + .sched-day { margin-top: 28px; }
+.sched-date {
+  font-family: var(--font-head); font-size: 1.35rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.02em; color: var(--white); background: var(--navy);
+  padding: 10px 16px; border-radius: var(--radius-sm);
+}
+.sched-gym {
+  margin-top: 14px; background: var(--surface); border-radius: var(--radius);
+  box-shadow: var(--shadow); border-top: 4px solid var(--teal); padding: 14px 16px 6px;
+}
+.sched-gym-name { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; color: var(--navy); text-transform: uppercase; }
+.sched-addr { color: var(--gray); font-size: 0.9rem; margin-top: 2px; overflow-wrap: anywhere; }
+.sched-games { list-style: none; margin: 10px 0 0; padding: 0; }
+/* Phones: time + boys/girls on one line, then the two teams stacked. Never wider than the screen. */
+.sched-game {
+  display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; align-items: center;
+  padding: 12px 0; border-top: 1px solid var(--border);
+}
+.sched-game[hidden], .sched-gym[hidden], .sched-day[hidden], .sched-empty[hidden] { display: none; }
+.sg-time { font-weight: 700; color: var(--navy); white-space: nowrap; }
+.sg-div {
+  justify-self: start; font-family: var(--font-head); font-size: 0.78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 8px; border-radius: 999px;
+}
+.sg-div--boys { background: rgba(10,108,116,0.12); color: var(--teal); }
+.sg-div--girls { background: rgba(58,171,62,0.14); color: var(--green-dk); }
+.sg-match { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sg-team { overflow-wrap: anywhere; color: var(--text); }
+.sg-name { font-weight: 600; }
+.sg-grade { color: var(--gray); font-size: 0.9rem; white-space: nowrap; }
+.sg-vs { color: var(--gray); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.sg-team.is-selected .sg-name { color: var(--teal); font-weight: 800; }
+.sched-empty {
+  margin-top: 18px; padding: 18px; text-align: center; color: var(--gray);
+  background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+
+@media (min-width: 620px) {
+  .sched-filters { grid-template-columns: 1fr 1.6fr auto; align-items: end; padding: 18px 20px; }
+  .sched-count { grid-column: 1 / -1; }
+}
+@media (min-width: 760px) {
+  .sched-gym { padding: 16px 22px 8px; }
+  /* Wider screens: one line per game — time | boys/girls | team vs team. */
+  .sched-game { grid-template-columns: 84px 74px 1fr; }
+  .sg-match { grid-column: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline; gap: 10px; }
+  .sg-vs { text-align: center; }
+}
