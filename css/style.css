@@ -821,6 +821,8 @@ footer {
 .event-body .event-link a { color: var(--teal); font-weight: 600; text-decoration: underline; }
 .schedule-link-row { margin-top: 26px; }
 .schedule-pdf-note { margin-top: 8px; color: var(--gray); font-size: 0.88rem; }
+/* Current schedule revision, shown under the schedule link: noticeable but secondary to the button */
+.schedule-updated { margin-top: 12px; color: var(--teal); font-size: 0.95rem; font-weight: 700; }
 
 .sched-filters {
   max-width: 980px; margin: 0 auto 22px; padding: 16px; display: grid; gap: 12px;
