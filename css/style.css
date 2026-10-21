@@ -891,3 +891,46 @@ footer {
   .sg-match { grid-column: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline; gap: 10px; }
   .sg-vs { text-align: center; }
 }
+
+/* ============================================================
+   "Run It Back" invitation page (run-it-back.html — unlisted; reached by business-card QR code)
+   Scoped rib-* classes only; reuses the hero, card, steps and Zoho-embed styles above.
+   ============================================================ */
+.rib-hero .hero-inner { padding-top: 56px; padding-bottom: 64px; }
+.rib-invite { border-left: 4px solid var(--gold); padding-left: 20px; }
+.rib-hero h1 span { display: inline-block; }
+.rib-hero .btn { min-height: 48px; }
+.rib-offer .card { border-top-color: var(--gold); }
+.rib-offer .card:hover { transform: none; box-shadow: var(--shadow); } /* informational cards, not links */
+.rib-offer .rib-card-secondary { border-top-color: var(--teal); background: var(--surface-2); box-shadow: none; border: 1px solid var(--border); border-top: 4px solid var(--teal); }
+.rib-steps { list-style: none; max-width: 980px; margin: 0 auto; }
+.rib-note {
+  max-width: 720px; margin: 26px auto 0; text-align: center; color: var(--text); font-size: 1rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 18px;
+}
+/* Anchor target for the hero button (the site header scrolls away, so only a small margin is needed). */
+.rib-form-section { scroll-margin-top: 12px; }
+/* The tested Zoho iframe is a static embed (it cannot report its height), so it gets a fixed height
+   that fits the form WITH every required-field error showing — the page scrolls, not the form.
+   Measured 2026-10-21 (form height with errors, by frame width): 264px → 1614; 319px (375px phone) → 1480;
+   540px → 1385; 820px → 1240. The inline 500px is overridden here. */
+.rib-embed iframe { width: 100% !important; height: 1640px !important; }
+@media (min-width: 375px) {
+  .rib-embed iframe { height: 1520px !important; }
+}
+.rib-fallback { text-align: center; margin-top: 16px; color: var(--gray); }
+.rib-fallback a { color: var(--teal); font-weight: 700; text-decoration: underline; display: inline-block; min-height: 44px; line-height: 44px; }
+.rib-contact .eyebrow { color: var(--gold); } /* teal eyebrow lacks contrast on navy */
+.rib-contact .section-title { margin-bottom: 18px; }
+.rib-contact-lines { font-style: normal; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 1.05rem; }
+.rib-contact-lines a { color: var(--gold); font-weight: 700; text-decoration: underline; overflow-wrap: anywhere; display: inline-block; min-height: 44px; line-height: 44px; }
+.rib-contact-lines span { color: rgba(255,255,255,0.8); }
+@media (min-width: 620px) {
+  .rib-embed iframe { height: 1420px !important; }
+}
+@media (min-width: 900px) {
+  .rib-hero .hero-inner { padding-top: 72px; padding-bottom: 80px; }
+  .rib-invite { padding-left: 28px; }
+  .rib-steps { grid-template-columns: repeat(3, 1fr); }
+  .rib-embed iframe { height: 1270px !important; }
+}
