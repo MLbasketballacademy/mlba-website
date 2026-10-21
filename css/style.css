@@ -910,10 +910,14 @@ footer {
 }
 /* Anchor target for the hero button (the site header scrolls away, so only a small margin is needed). */
 .rib-form-section { scroll-margin-top: 12px; }
-/* The tested Zoho iframe is a static embed (it cannot report its height), so give it room for every
-   field, validation messages and the thank-you state — the page scrolls, not the form. Heights cover
-   the form's measured height at each width plus a buffer; the inline 500px is overridden here. */
-.rib-embed iframe { width: 100% !important; height: 1600px !important; }
+/* The tested Zoho iframe is a static embed (it cannot report its height), so it gets a fixed height
+   that fits the form WITH every required-field error showing — the page scrolls, not the form.
+   Measured 2026-10-21 (form height with errors, by frame width): 264px → 1614; 319px (375px phone) → 1480;
+   540px → 1385; 820px → 1240. The inline 500px is overridden here. */
+.rib-embed iframe { width: 100% !important; height: 1640px !important; }
+@media (min-width: 375px) {
+  .rib-embed iframe { height: 1520px !important; }
+}
 .rib-fallback { text-align: center; margin-top: 16px; color: var(--gray); }
 .rib-fallback a { color: var(--teal); font-weight: 700; text-decoration: underline; display: inline-block; min-height: 44px; line-height: 44px; }
 .rib-contact .eyebrow { color: var(--gold); } /* teal eyebrow lacks contrast on navy */
@@ -922,11 +926,11 @@ footer {
 .rib-contact-lines a { color: var(--gold); font-weight: 700; text-decoration: underline; overflow-wrap: anywhere; display: inline-block; min-height: 44px; line-height: 44px; }
 .rib-contact-lines span { color: rgba(255,255,255,0.8); }
 @media (min-width: 620px) {
-  .rib-embed iframe { height: 1450px !important; }
+  .rib-embed iframe { height: 1420px !important; }
 }
 @media (min-width: 900px) {
   .rib-hero .hero-inner { padding-top: 72px; padding-bottom: 80px; }
   .rib-invite { padding-left: 28px; }
   .rib-steps { grid-template-columns: repeat(3, 1fr); }
-  .rib-embed iframe { height: 1320px !important; }
+  .rib-embed iframe { height: 1270px !important; }
 }

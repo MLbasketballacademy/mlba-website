@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Let’s Run It Back — Moses Lake Basketball Academy</title>
   <meta name="description" content="A personal invitation from Moses Lake Basketball Academy: bring your team to Moses Lake for a Saturday of competitive, thoughtfully matched games.">
+  <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://mlbasketballacademy.org/run-it-back">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Let’s Run It Back — Moses Lake Basketball Academy">
@@ -101,8 +102,25 @@
         </div>
 
         <div class="zf-embed rib-embed">
-<iframe aria-label='MLBA — Run It Back Team Interest' title="MLBA — Run It Back Team Interest form" frameborder="0" style="height:500px;width:99%;border:none;" src='https://forms.zohopublic.com/dandersonmlbasketb1/form/MLBARunItBackTeamInterest/formperma/DVgYvcdOb5ymJYfeTNhfk1QcEMJk9j-xVth3T90rtZQ'>
+<iframe id="rib-form-frame" aria-label='MLBA — Run It Back Team Interest' title="MLBA — Run It Back Team Interest form" frameborder="0" style="height:500px;width:99%;border:none;" src='https://forms.zohopublic.com/dandersonmlbasketb1/form/MLBARunItBackTeamInterest/formperma/DVgYvcdOb5ymJYfeTNhfk1QcEMJk9j-xVth3T90rtZQ'>
 </iframe>
+<script>
+/* After a successful submission Zoho loads its thank-you page inside the frame (a second load event).
+   The frame keeps its fixed height, so bring the top of the frame — where the thank-you message
+   appears — into view. Validation errors do not reload the frame, so they never trigger this.
+   An instant jump is used because the page's smooth scrolling is cancelled by the form's own load. */
+(function () {
+  var frame = document.getElementById('rib-form-frame');
+  if (!frame) return;
+  var loads = 0;
+  frame.addEventListener('load', function () {
+    loads += 1;
+    if (loads < 2) return;
+    try { frame.scrollIntoView({ block: 'start', behavior: 'instant' }); }
+    catch (e) { frame.scrollIntoView(true); }
+  });
+})();
+</script>
         </div>
         <p class="rib-fallback">Form not loading? <a href="https://forms.zohopublic.com/dandersonmlbasketb1/form/MLBARunItBackTeamInterest/formperma/DVgYvcdOb5ymJYfeTNhfk1QcEMJk9j-xVth3T90rtZQ" target="_blank" rel="noopener">Open the form in a new tab</a>.</p>
       </div>
