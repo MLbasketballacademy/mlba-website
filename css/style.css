@@ -875,6 +875,17 @@ footer {
 .sg-grade { color: var(--gray); font-size: 0.9rem; white-space: nowrap; }
 .sg-vs { color: var(--gray); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; }
 .sg-team.is-selected .sg-name { color: var(--teal); font-weight: 800; }
+/* Completed games only: final score beside each team name, plus a small FINAL label under/after the time. */
+.sg-score {
+  display: inline-block; min-width: 2.2em; margin-left: 6px; padding: 0 6px; border-radius: var(--radius-sm);
+  background: rgba(13,35,64,0.08); color: var(--navy); font-weight: 800; text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.sg-final {
+  display: inline-block; margin-left: 8px; padding: 1px 6px; border-radius: 999px; border: 1px solid var(--border);
+  font-family: var(--font-head); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--gray); vertical-align: middle;
+}
 .sched-empty {
   margin-top: 18px; padding: 18px; text-align: center; color: var(--gray);
   background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
@@ -890,6 +901,7 @@ footer {
   .sched-game { grid-template-columns: 84px 74px 1fr; }
   .sg-match { grid-column: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline; gap: 10px; }
   .sg-vs { text-align: center; }
+  .sg-final { display: table; margin: 3px 0 0; }
 }
 
 /* ============================================================
