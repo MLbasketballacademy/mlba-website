@@ -886,6 +886,12 @@ footer {
   font-family: var(--font-head); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--gray); vertical-align: middle;
 }
+/* Scheduled game that was not played (no score, no forfeit): small label under/after the time, like FINAL. */
+.sg-status {
+  display: inline-block; margin-left: 8px; padding: 1px 6px; border-radius: 999px; border: 1px solid #c9a227;
+  font-family: var(--font-head); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #8a6d00; background: #fff8e1; vertical-align: middle;
+}
 .sched-empty {
   margin-top: 18px; padding: 18px; text-align: center; color: var(--gray);
   background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
@@ -901,7 +907,7 @@ footer {
   .sched-game { grid-template-columns: 84px 74px 1fr; }
   .sg-match { grid-column: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline; gap: 10px; }
   .sg-vs { text-align: center; }
-  .sg-final { display: table; margin: 3px 0 0; }
+  .sg-final, .sg-status { display: table; margin: 3px 0 0; }
 }
 
 /* ============================================================
