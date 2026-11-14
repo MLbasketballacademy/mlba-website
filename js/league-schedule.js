@@ -20,6 +20,8 @@
   });
   var teams = {};
   root.querySelectorAll('.sg-team').forEach(function (el) {
+    // Guest (non-league) opponents carry no data-team and are not offered in the team filter.
+    if (!el.hasAttribute('data-team')) return;
     teams[el.getAttribute('data-team')] = {
       label: el.getAttribute('data-label'),
       order: el.getAttribute('data-order')
