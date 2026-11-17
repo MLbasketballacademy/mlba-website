@@ -57,27 +57,28 @@ mlba-website/
 
 ## Seasonal promotions (temporary — Winter 2026–27)
 
-Added for Swishmas at The Lake, MLBA Winter player registration and the January–February Winter League.
-The permanent design and the standard homepage content are unchanged; the seasonal material is layered on top.
+Swishmas at The Lake, MLBA Winter player registration and the January–February Winter League.
+The permanent design and the standard page content are unchanged; seasonal material is added in marked blocks.
 
 | Piece | Where | Purpose |
 |---|---|---|
-| Seasonal block | `index.html`, between `SEASONAL PROMOTIONS — START` and `SEASONAL PROMOTIONS — END` | Three-path chooser + Swishmas, Winter player and Winter League sections. Each promotion is its own marked sub-block. |
-| Swishmas block | `leagues-tournaments.html`, between `SEASONAL: Swishmas … START/END`, plus lines marked `SEASONAL:` | Flyer, details, Saturday-only option; replaces the "MLBA-Operated Tournament / TBD" card. |
-| `css/seasonal-promo.css` | linked from both pages | Promotion layout only. Every selector starts with `.sp-`. |
-| `css/seasonal-holiday.css` | linked from `index.html`; active only with `<body class="season-holiday">` | Christmas decoration only (no content). Static; no animation. |
-| `images/seasonal/` | flyer PNG (approved original, unmodified) + WebP sizes 560/800/1103 | WebP versions verified to keep the QR readable. |
-| `files/swishmas/Swishmas-at-The-Lake-2026-Flyer.pdf` | approved flyer PDF (unmodified) | "Download Flyer" link. |
+| Seasonal block 1 | `index.html`, `SEASONAL BLOCK 1 of 2` (above the hero) | Three-option registration chooser. Each option card is marked and removable on its own. |
+| Seasonal block 2 | `index.html`, `SEASONAL BLOCK 2 of 2` (right after the hero) | Swishmas flyer, details, Saturday-only option. |
+| Winter programs | `pathways.html`, `SEASONAL: WINTER 2026–27 PLAYER REGISTRATION` (id `winter-2026-27`) | Four-offering comparison; returning players → AthletePilot Dashboard. |
+| Swishmas (Leagues) | `leagues-tournaments.html`, `SEASONAL: Swishmas` block + lines marked `SEASONAL:` | Flyer section; replaces the "MLBA-Operated Tournament / TBD" card. |
+| `css/seasonal-promo.css` | linked from the three pages | Promotion layout only; every selector starts with `.sp-`. |
+| `css/seasonal-holiday.css` | `index.html` only; active with `<body class="season-holiday">` | Christmas decoration only (lights, ornaments, stripes). Static; no content. |
+| `images/seasonal/`, `files/swishmas/` | approved flyer PNG/PDF (unmodified) + WebP sizes | WebP sizes verified to keep the QR readable. |
 
-**Remove only the Christmas styling** (keep January–February promotions): delete `class="season-holiday"` from the
-`<body>` tag in `index.html` and its `seasonal-holiday.css` `<link>`; then delete `css/seasonal-holiday.css`.
+**Remove only the Christmas styling** (keep January–February promotions): delete `class="season-holiday"` from
+`<body>` in `index.html` and the `seasonal-holiday.css` `<link>`; then delete `css/seasonal-holiday.css`.
 
-**Retire one promotion:** delete its marked sub-block (and the matching chooser card in `sp-hub`). On
-`leagues-tournaments.html`, restore the tournament placeholder card and wording from the pre-seasonal commit.
+**Retire one promotion:** delete its marked block or option card. On `leagues-tournaments.html`, restore the
+tournament placeholder card and wording from the pre-seasonal commit.
 
-**Restore the standard homepage exactly:** `git checkout 20309b6 -- index.html` (the commit before the seasonal
-work), or delete the whole seasonal block plus the two seasonal `<link>` tags and the body class. When no page
-uses `.sp-` markup any more, delete `css/seasonal-promo.css`, `images/seasonal/` and `files/swishmas/`.
+**Restore the standard pages exactly:** `git checkout 20309b6 -- index.html pathways.html leagues-tournaments.html`
+(the commit before the seasonal work). When no page uses `.sp-` markup, delete `css/seasonal-promo.css`,
+`images/seasonal/` and `files/swishmas/`.
 
 ## Integrations
 

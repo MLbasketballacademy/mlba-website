@@ -1,60 +1,73 @@
 /* ============================================================
-   SEASONAL HOLIDAY DECORATION — Christmas / winter accents (decoration only)
+   SEASONAL HOLIDAY DECORATION — Christmas / winter basketball accents (decoration only)
    Active only when <body class="season-holiday"> is set (homepage).
    Contains NO content and NO registration information: removing the body class
    (or this file's <link>) removes every holiday accent and leaves the promotions,
    the homepage, and the permanent brand design unchanged.
-   Static only: no animation, no falling snow, no popups.
+   Static only: no animation, no falling snow, no popups. Decorative images are CSS backgrounds
+   (ignored by screen readers) and are hidden in forced-colors mode.
    ============================================================ */
 
 body.season-holiday {
-  --holiday-red: #b11f2b;     /* 6.3:1 on white */
-  --holiday-red-dk: #8a1c1c;
+  --holiday-red: #b11f2b;     /* 6.8:1 on white */
   --holiday-pine: #1d5b34;
 }
 
-/* Ribbon stripe: holiday red / gold / brand green, under the main navigation */
+/* Ribbon stripe under the main navigation */
 body.season-holiday #main::before {
   content: ''; display: block; height: 6px;
-  background: linear-gradient(90deg,
-    var(--holiday-red) 0 33.3%, var(--gold) 33.3% 66.6%, var(--holiday-pine) 66.6% 100%);
+  background: linear-gradient(90deg, var(--holiday-red) 0 33.3%, var(--gold) 33.3% 66.6%, var(--holiday-pine) 66.6% 100%);
 }
 
-/* Chooser band: static snowflake pattern + soft winter glow */
+/* Chooser band: winter-night gradient, warm glow, static snowflakes, string lights, basketball ornaments */
 body.season-holiday .sp-hub {
   background:
-    radial-gradient(ellipse at 85% 0%, rgba(245,166,35,0.20) 0%, rgba(245,166,35,0) 55%),
-    linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, #123f33 100%);
+    radial-gradient(ellipse at 88% 10%, rgba(245,166,35,0.28) 0%, rgba(245,166,35,0) 50%),
+    radial-gradient(ellipse at 8% 100%, rgba(58,171,62,0.22) 0%, rgba(58,171,62,0) 55%),
+    linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 50%, #123f33 100%);
+  padding-top: 52px;
   overflow: hidden;
 }
+/* snowflakes + string lights (top edge) */
 body.season-holiday .sp-hub::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg stroke='%23ffffff' stroke-opacity='0.09' stroke-width='2' stroke-linecap='round' fill='none'%3E%3Cpath d='M30 18v24M18 30h24M21.5 21.5l17 17M38.5 21.5l-17 17'/%3E%3Cpath d='M90 72v20M80 82h20M83 75l14 14M97 75l-14 14'/%3E%3C/g%3E%3Ccircle cx='70' cy='28' r='2' fill='%23ffffff' fill-opacity='0.12'/%3E%3Ccircle cx='20' cy='92' r='1.6' fill='%23ffffff' fill-opacity='0.12'/%3E%3C/svg%3E") repeat;
-}
-body.season-holiday .sp-hub > .container { position: relative; }
-body.season-holiday .sp-hub .eyebrow::before { content: '\2744\FE0E  '; } /* ❄ decorative glyph */
-
-/* Cards: a thin red ribbon above each path card's own color bar */
-body.season-holiday .sp-path { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 18px 48px rgba(0,0,0,0.30); }
-body.season-holiday .sp-path::before {
-  content: ''; display: block; height: 4px; background: var(--holiday-red);
-}
-
-/* Detail sections: holiday-red eyebrows and a gold/red underline */
-body.season-holiday .sp-section .eyebrow { color: var(--holiday-red); }
-body.season-holiday .sp-section .section-title.underline::after {
-  background: linear-gradient(90deg, var(--holiday-red) 0 50%, var(--gold) 50% 100%);
-}
-body.season-holiday #swishmas {
   background:
-    linear-gradient(180deg, rgba(177,31,43,0.05) 0%, rgba(177,31,43,0) 240px),
-    var(--surface);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='40'%3E%3Cpath d='M0 6 Q40 26 80 6 T160 6' stroke='%23d9e6df' stroke-opacity='.55' stroke-width='1.6' fill='none'/%3E%3Cg%3E%3Crect x='17' y='11' width='6' height='5' rx='1' fill='%23c9a227'/%3E%3Cellipse cx='20' cy='22' rx='5' ry='7' fill='%23e5383b'/%3E%3Crect x='57' y='11' width='6' height='5' rx='1' fill='%23c9a227'/%3E%3Cellipse cx='60' cy='22' rx='5' ry='7' fill='%23f5a623'/%3E%3Crect x='97' y='11' width='6' height='5' rx='1' fill='%23c9a227'/%3E%3Cellipse cx='100' cy='22' rx='5' ry='7' fill='%233aab3e'/%3E%3Crect x='137' y='11' width='6' height='5' rx='1' fill='%23c9a227'/%3E%3Cellipse cx='140' cy='22' rx='5' ry='7' fill='%233fc1d0'/%3E%3C/g%3E%3C/svg%3E") repeat-x 0 0 / 160px 40px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg stroke='%23ffffff' stroke-opacity='0.10' stroke-width='2' stroke-linecap='round' fill='none'%3E%3Cpath d='M30 18v24M18 30h24M21.5 21.5l17 17M38.5 21.5l-17 17'/%3E%3Cpath d='M90 72v20M80 82h20M83 75l14 14M97 75l-14 14'/%3E%3C/g%3E%3Ccircle cx='70' cy='28' r='2' fill='%23ffffff' fill-opacity='0.14'/%3E%3Ccircle cx='20' cy='92' r='1.6' fill='%23ffffff' fill-opacity='0.14'/%3E%3C/svg%3E") repeat 0 40px;
 }
+/* basketball ornaments hanging from the lights (right side) */
+body.season-holiday .sp-hub::after {
+  content: ''; position: absolute; top: 0; right: max(12px, calc((100vw - var(--maxw)) / 2 + 8px));
+  width: 82px; height: 118px; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='110' viewBox='0 0 70 110'%3E%3Cline x1='35' y1='0' x2='35' y2='34' stroke='%23f5a623' stroke-width='2'/%3E%3Crect x='29' y='31' width='12' height='9' rx='2' fill='%23f5a623'/%3E%3Ccircle cx='35' cy='70' r='30' fill='%23e8742a'/%3E%3Cg fill='none' stroke='%235a2a0e' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M5 70h60'/%3E%3Cpath d='M35 40v60'/%3E%3Cpath d='M14 49c10 8 10 34 0 42'/%3E%3Cpath d='M56 49c-10 8-10 34 0 42'/%3E%3C/g%3E%3Ccircle cx='24' cy='57' r='6' fill='%23ffffff' fill-opacity='.28'/%3E%3Cpath d='M22 38c-8-6-16-2-18 4 7 1 13 0 18-4zM48 38c8-6 16-2 18 4-7 1-13 0-18-4z' fill='%231d5b34'/%3E%3Ccircle cx='35' cy='38' r='4' fill='%23e5383b'/%3E%3C/svg%3E") no-repeat right top / 70px 110px;
+}
+body.season-holiday .sp-hub > .container { position: relative; z-index: 1; }
+body.season-holiday .sp-hub-title { padding-right: 84px; }
+
+/* Option cards: a red ribbon under each card's colour bar */
+body.season-holiday .sp-path { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 18px 48px rgba(0,0,0,0.32); }
+body.season-holiday .sp-path::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--holiday-red);
+}
+
+/* Swishmas feature: candy-stripe top edge and soft winter backdrop */
+body.season-holiday .sp-swishmas {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg stroke='%230b2d4e' stroke-opacity='0.06' stroke-width='2' stroke-linecap='round' fill='none'%3E%3Cpath d='M30 18v24M18 30h24M21.5 21.5l17 17M38.5 21.5l-17 17'/%3E%3Cpath d='M90 72v20M80 82h20M83 75l14 14M97 75l-14 14'/%3E%3C/g%3E%3C/svg%3E") repeat,
+    linear-gradient(180deg, #fdf3ea 0%, #f7f9fb 100%);
+  border-top: 10px solid transparent;
+  border-image: repeating-linear-gradient(135deg, var(--holiday-red) 0 14px, #ffffff 14px 28px, var(--holiday-pine) 28px 42px, #ffffff 42px 56px) 10;
+}
+body.season-holiday .sp-swish-title { color: var(--holiday-red); }
 body.season-holiday .sp-callout { border-color: var(--holiday-red); background: #fff6f0; }
 
 /* Brand hero keeps its design; only a festive edge underneath */
 body.season-holiday .hero { border-bottom: 6px solid var(--gold); }
 
+@media (max-width: 619px) {
+  body.season-holiday .sp-hub::after { width: 56px; height: 84px; background-size: 48px 76px; right: 12px; }
+  body.season-holiday .sp-hub-title { padding-right: 56px; }
+}
 @media (forced-colors: active) {
-  body.season-holiday .sp-hub::before { display: none; }
+  body.season-holiday .sp-hub::before, body.season-holiday .sp-hub::after { display: none; }
 }
