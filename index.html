@@ -7,12 +7,57 @@
   <meta name="description" content="Moses Lake Basketball Academy is the basketball organization serving Moses Lake and the Columbia Basin — girls Academy, competitive teams, MLBA Elite, and the home of Columbia Basin AAU. Every athlete has a pathway.">
   <link rel="icon" href="images/mlba-logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
+  <!-- Seasonal (temporary): promotions content + holiday decoration. See README "Seasonal promotions". -->
+  <link rel="stylesheet" href="css/seasonal-promo.css">
+  <link rel="stylesheet" href="css/seasonal-holiday.css">
 </head>
-<body>
+<body class="season-holiday">
   <div id="site-header"></div>
   <div id="site-nav"></div>
 
   <main id="main">
+
+    <!-- ═════ SEASONAL BLOCK 1 of 2: REGISTRATION CHOOSER — START (Winter 2026–27, temporary) ═════
+         Restore the standard homepage by deleting SEASONAL BLOCK 1 and SEASONAL BLOCK 2 (below the hero),
+         plus the two seasonal <link> tags and the body class. Each option card can be removed on its own. -->
+    <section class="sp-hub" aria-labelledby="sp-hub-title">
+      <div class="container">
+        <h2 id="sp-hub-title" class="sp-hub-title"><span class="sp-hub-kicker">Winter 2026–27</span> Which registration do you need?</h2>
+        <ul class="sp-paths">
+          <!-- OPTION: Swishmas (coaches) -->
+          <li class="sp-path sp-path--team">
+            <span class="sp-audience">Coaches · whole team</span>
+            <h3>Register a Team<span class="sp-vh"> — </span> <span class="sp-dash">Swishmas Tournament</span></h3>
+            <p>Dec 19–20 in Moses Lake · Boys &amp; Girls, Grades 3–8 · $400 per team · Register by Dec 10</p>
+            <div class="sp-path-actions">
+              <a href="https://tourneymachine.com/E190077" class="btn btn-gold">Register Your Team</a>
+              <a href="#swishmas" class="sp-path-link">Flyer &amp; Saturday-only option</a>
+            </div>
+          </li>
+          <!-- OPTION: MLBA Winter player registration (parents) — retire after Nov 30 -->
+          <li class="sp-path sp-path--player">
+            <span class="sp-audience">Parents · one player</span>
+            <h3>Register a Player<span class="sp-vh"> — </span> <span class="sp-dash">MLBA Winter Programs</span></h3>
+            <p>Team and Academy programs Dec 1 – Feb 28 · $100–$180 · Register by Nov 30</p>
+            <div class="sp-path-actions">
+              <a href="https://www.athletepilot.com/login" class="btn btn-primary">Returning Player: Sign In</a>
+              <a href="pathways.html#winter-2026-27" class="btn btn-ghost">New Player: Compare Programs</a>
+            </div>
+            <p class="sp-path-note">Returning players re-register from the AthletePilot Dashboard.</p>
+          </li>
+          <!-- OPTION: January–February Winter League (outside teams) — registration NOT open; update when confirmed -->
+          <li class="sp-path sp-path--league" id="winter-league">
+            <span class="sp-audience">Coaches · outside teams</span>
+            <h3>Register a Team<span class="sp-vh"> — </span> <span class="sp-dash">January–February Winter League</span></h3>
+            <p><span class="sp-status sp-status--soon">Not open yet</span> League play in January–February 2027 for teams from outside Moses Lake. Dates, fee and game guarantee will be posted when registration opens.</p>
+            <div class="sp-path-actions">
+              <a href="mailto:league@mlbasketballacademy.org?subject=Winter%20League%20team%20interest" class="btn btn-ghost">Email Us to Get Notified</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- ═════ SEASONAL BLOCK 1 of 2 — END ═════ -->
 
     <!-- Hero -->
     <section class="hero">
@@ -35,6 +80,39 @@
         </div>
       </div>
     </section>
+
+    <!-- ═════ SEASONAL BLOCK 2 of 2: SWISHMAS AT THE LAKE — START (remove after the Dec 19–20 tournament) ═════ -->
+    <section class="sp-section sp-swishmas" id="swishmas" aria-labelledby="swishmas-title">
+      <div class="container sp-swish-grid">
+        <figure class="sp-flyer">
+          <a href="https://tourneymachine.com/E190077">
+            <picture>
+              <source type="image/webp"
+                      srcset="images/seasonal/swishmas-at-the-lake-2026-flyer-560.webp 560w, images/seasonal/swishmas-at-the-lake-2026-flyer-800.webp 800w, images/seasonal/swishmas-at-the-lake-2026-flyer-1103.webp 1103w"
+                      sizes="(min-width: 900px) 400px, (min-width: 500px) 420px, calc(100vw - 40px)">
+              <img src="images/seasonal/swishmas-at-the-lake-2026-flyer.png" width="1103" height="1426" loading="lazy" decoding="async"
+                   alt="Register your team for Swishmas at The Lake. Flyer: December 19–20, 2026 in Moses Lake, WA. Boys and girls, grades 3–8. $400 per team, 3-game guarantee, no gate fees. Register by December 10 at tourneymachine.com/E190077. Credit card processing fees apply.">
+            </picture>
+          </a>
+        </figure>
+        <div class="sp-swish-copy">
+          <h2 class="sp-swish-title" id="swishmas-title">Swishmas at The Lake</h2>
+          <ul class="sp-details">
+            <li><span>When</span><span>December 19–20, 2026 · Moses Lake, WA</span></li>
+            <li><span>Divisions</span><span>Boys and Girls, Grades 3–8</span></li>
+            <li><span>Entry</span><span>$400 per team · 3-game guarantee · no gate fees</span></li>
+            <li><span>Register by</span><span>December 10, 2026</span></li>
+          </ul>
+          <p class="sp-callout"><strong>Saturday-only option available:</strong> Play all three guaranteed games on Saturday, December 19, for the same $400 entry fee. Saturday-only teams do not participate in Sunday’s championship bracket. Select this option when registering.</p>
+          <div class="btn-row sp-actions">
+            <a href="https://tourneymachine.com/E190077" class="btn btn-primary">Register Your Team</a>
+            <a href="files/swishmas/Swishmas-at-The-Lake-2026-Flyer.pdf" class="sp-link-secondary" download>Download Flyer (PDF)</a>
+          </div>
+          <p class="sp-small">Credit card processing fees apply. Questions? <a class="sp-inline-link" href="mailto:info@mlbasketballacademy.org">info@mlbasketballacademy.org</a></p>
+        </div>
+      </div>
+    </section>
+    <!-- ═════ SEASONAL BLOCK 2 of 2 — END ═════ -->
 
     <!-- Three girls participation options -->
     <section class="section">

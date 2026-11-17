@@ -42,15 +42,45 @@ mlba-website/
 ├── fall-league-schedule.html
 ├── CNAME                  ← Custom domain for GitHub Pages (do not remove)
 ├── css/
-│   └── style.css          ← Design system + all page styles
+│   ├── style.css          ← Design system + all page styles
+│   ├── seasonal-promo.css ← Temporary seasonal promotions (see "Seasonal promotions")
+│   └── seasonal-holiday.css ← Temporary Christmas decoration (body.season-holiday)
 ├── js/
 │   ├── components.js      ← Shared header / nav / footer (single source of truth)
 │   └── main.js            ← Active nav, mobile menu, contact-form mailto handoff
 ├── files/
-│   └── 2026-fall-league/ ← Published league schedule PDFs
+│   ├── 2026-fall-league/ ← Published league schedule PDFs
+│   └── swishmas/         ← Swishmas flyer PDF (temporary)
 └── images/
     └── mlba-logo.png      ← MLBA logo (also used as favicon)
 ```
+
+## Seasonal promotions (temporary — Winter 2026–27)
+
+Swishmas at The Lake, MLBA Winter player registration and the January–February Winter League.
+The permanent design and the standard page content are unchanged; seasonal material is added in marked blocks.
+
+| Piece | Where | Purpose |
+|---|---|---|
+| Seasonal block 1 | `index.html`, `SEASONAL BLOCK 1 of 2` (above the hero) | Three-option registration chooser. Each option card is marked and removable on its own. |
+| Seasonal block 2 | `index.html`, `SEASONAL BLOCK 2 of 2` (right after the hero) | Swishmas flyer, details, Saturday-only option. |
+| Winter programs | `pathways.html`, `SEASONAL: WINTER 2026–27 PLAYER REGISTRATION` (id `winter-2026-27`) | Four-offering comparison; returning players → AthletePilot Dashboard. |
+| Swishmas (Leagues) | `leagues-tournaments.html`, `SEASONAL: Swishmas` block + lines marked `SEASONAL:` | Flyer section; replaces the "MLBA-Operated Tournament / TBD" card. |
+| `css/seasonal-promo.css` | linked from the three pages | Promotion layout only; every selector starts with `.sp-`. |
+| `css/seasonal-holiday.css` | `index.html` only; active with `<body class="season-holiday">` | Christmas decoration only (lights, ornaments, stripes). Static; no content. |
+| `images/seasonal/`, `files/swishmas/` | approved flyer PNG/PDF (unmodified) + WebP sizes | WebP sizes verified to keep the QR readable. |
+
+**Remove only the Christmas styling** (keep January–February promotions): delete `class="season-holiday"` from
+`<body>` in `index.html` and the `seasonal-holiday.css` `<link>`; then delete `css/seasonal-holiday.css`.
+
+**Retire one promotion:** delete its marked block or option card. On `leagues-tournaments.html`, restore the
+tournament placeholder card and wording from the pre-seasonal commit.
+
+**Closed-registration status (not seasonal):** lines marked `STATUS` in `pathways.html`, `academy.html` and `team-registration.html` (and the removed Fall outside-team button on `leagues-tournaments.html`) mark Fall 2026 registration as closed. Keep them when removing seasonal blocks; a whole-file `git checkout 20309b6` would bring back the closed Fall buttons.
+
+**Restore the standard pages exactly:** `git checkout 20309b6 -- index.html pathways.html leagues-tournaments.html`
+(the commit before the seasonal work). When no page uses `.sp-` markup, delete `css/seasonal-promo.css`,
+`images/seasonal/` and `files/swishmas/`.
 
 ## Integrations
 
