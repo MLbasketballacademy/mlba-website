@@ -1,0 +1,60 @@
+/* ============================================================
+   SEASONAL HOLIDAY DECORATION — Christmas / winter accents (decoration only)
+   Active only when <body class="season-holiday"> is set (homepage).
+   Contains NO content and NO registration information: removing the body class
+   (or this file's <link>) removes every holiday accent and leaves the promotions,
+   the homepage, and the permanent brand design unchanged.
+   Static only: no animation, no falling snow, no popups.
+   ============================================================ */
+
+body.season-holiday {
+  --holiday-red: #b11f2b;     /* 6.3:1 on white */
+  --holiday-red-dk: #8a1c1c;
+  --holiday-pine: #1d5b34;
+}
+
+/* Ribbon stripe: holiday red / gold / brand green, under the main navigation */
+body.season-holiday #main::before {
+  content: ''; display: block; height: 6px;
+  background: linear-gradient(90deg,
+    var(--holiday-red) 0 33.3%, var(--gold) 33.3% 66.6%, var(--holiday-pine) 66.6% 100%);
+}
+
+/* Chooser band: static snowflake pattern + soft winter glow */
+body.season-holiday .sp-hub {
+  background:
+    radial-gradient(ellipse at 85% 0%, rgba(245,166,35,0.20) 0%, rgba(245,166,35,0) 55%),
+    linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, #123f33 100%);
+  overflow: hidden;
+}
+body.season-holiday .sp-hub::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg stroke='%23ffffff' stroke-opacity='0.09' stroke-width='2' stroke-linecap='round' fill='none'%3E%3Cpath d='M30 18v24M18 30h24M21.5 21.5l17 17M38.5 21.5l-17 17'/%3E%3Cpath d='M90 72v20M80 82h20M83 75l14 14M97 75l-14 14'/%3E%3C/g%3E%3Ccircle cx='70' cy='28' r='2' fill='%23ffffff' fill-opacity='0.12'/%3E%3Ccircle cx='20' cy='92' r='1.6' fill='%23ffffff' fill-opacity='0.12'/%3E%3C/svg%3E") repeat;
+}
+body.season-holiday .sp-hub > .container { position: relative; }
+body.season-holiday .sp-hub .eyebrow::before { content: '\2744\FE0E  '; } /* ❄ decorative glyph */
+
+/* Cards: a thin red ribbon above each path card's own color bar */
+body.season-holiday .sp-path { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 18px 48px rgba(0,0,0,0.30); }
+body.season-holiday .sp-path::before {
+  content: ''; display: block; height: 4px; background: var(--holiday-red);
+}
+
+/* Detail sections: holiday-red eyebrows and a gold/red underline */
+body.season-holiday .sp-section .eyebrow { color: var(--holiday-red); }
+body.season-holiday .sp-section .section-title.underline::after {
+  background: linear-gradient(90deg, var(--holiday-red) 0 50%, var(--gold) 50% 100%);
+}
+body.season-holiday #swishmas {
+  background:
+    linear-gradient(180deg, rgba(177,31,43,0.05) 0%, rgba(177,31,43,0) 240px),
+    var(--surface);
+}
+body.season-holiday .sp-callout { border-color: var(--holiday-red); background: #fff6f0; }
+
+/* Brand hero keeps its design; only a festive edge underneath */
+body.season-holiday .hero { border-bottom: 6px solid var(--gold); }
+
+@media (forced-colors: active) {
+  body.season-holiday .sp-hub::before { display: none; }
+}

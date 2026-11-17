@@ -1,0 +1,142 @@
+/* ============================================================
+   SEASONAL PROMOTIONS — registration content blocks (Winter 2026–27)
+   Used by index.html (sp-hub + sections) and leagues-tournaments.html (sp-swishmas).
+   Every selector starts with .sp- so nothing here touches the permanent design.
+   Holiday decoration lives separately in css/seasonal-holiday.css (body.season-holiday),
+   so Christmas styling can be removed while these promotions stay.
+   To retire a promotion: delete its marked HTML block. When no page uses .sp- markup,
+   remove this file and its <link> tags. See README.md → "Seasonal promotions".
+   ============================================================ */
+
+/* ── Registration chooser (homepage) ── */
+.sp-hub {
+  position: relative;
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, #0d3b5e 100%);
+  color: var(--white);
+  padding: 44px 0 48px;
+}
+.sp-hub .eyebrow { color: var(--gold); }
+.sp-hub h2 {
+  font-family: var(--font-head); font-weight: 900; text-transform: uppercase;
+  font-size: clamp(1.9rem, 6vw, 2.8rem); line-height: 1.02; letter-spacing: 0.02em;
+}
+.sp-hub-lead { color: var(--text-inv); margin-top: 10px; max-width: 700px; font-size: 1.05rem; }
+.sp-hub-lead strong { color: var(--white); }
+
+.sp-paths { list-style: none; display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 28px; }
+.sp-path {
+  background: var(--surface); color: var(--text); border-radius: var(--radius);
+  box-shadow: var(--shadow-lg); display: flex; flex-direction: column; overflow: hidden;
+  border-top: 6px solid var(--teal);
+}
+.sp-path--team { border-top-color: var(--gold); }
+.sp-path--player { border-top-color: var(--green); }
+.sp-path-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+.sp-audience {
+  align-self: flex-start; font-family: var(--font-head); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; font-size: 0.74rem; padding: 4px 10px; border-radius: 999px;
+  background: var(--navy); color: var(--white);
+}
+.sp-path--player .sp-audience { background: #1d6b21; }
+.sp-path h3 {
+  font-family: var(--font-head); font-weight: 800; text-transform: uppercase; color: var(--navy);
+  font-size: 1.45rem; line-height: 1.08; margin-top: 12px;
+}
+.sp-path h3 .sp-dash { display: block; font-size: 1.05rem; color: var(--teal); letter-spacing: 0.04em; }
+.sp-path p { color: var(--gray); font-size: 0.96rem; margin-top: 8px; }
+.sp-facts { list-style: none; margin: 12px 0 18px; font-size: 0.93rem; }
+.sp-facts li { padding: 5px 0; border-bottom: 1px solid var(--border); color: var(--text); }
+.sp-facts li:last-child { border-bottom: none; }
+.sp-facts b { color: var(--navy); }
+.sp-path .btn { margin-top: auto; width: 100%; }
+.sp-status {
+  display: inline-block; font-family: var(--font-head); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; font-size: 0.78rem; padding: 3px 9px; border-radius: 6px; margin-left: 6px;
+  vertical-align: middle;
+}
+.sp-status--open { background: #e3f4e4; color: #1d6b21; }
+.sp-status--soon { background: #fff1d6; color: #7a4a00; }
+
+/* ── Detail sections (shared) ── */
+.sp-section { padding: 56px 0; background: var(--surface); }
+.sp-section.sp-alt { background: var(--surface-2); }
+.sp-section[id], .sp-anchor { scroll-margin-top: 12px; }
+.sp-note { color: var(--gray); font-size: 0.92rem; margin-top: 14px; }
+.sp-note a, .sp-inline-link { overflow-wrap: anywhere; color: var(--teal); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── Swishmas at The Lake (homepage + Leagues & Tournaments) ── */
+.sp-swish-grid { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start; }
+.sp-flyer { margin: 0 auto; width: 100%; max-width: 460px; }
+.sp-flyer a { display: block; border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden; }
+.sp-flyer img { width: 100%; height: auto; aspect-ratio: 1103 / 1426; display: block; }
+.sp-flyer figcaption { text-align: center; font-size: 0.86rem; color: var(--gray); margin-top: 10px; }
+.sp-details { list-style: none; margin: 18px 0 0; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--surface); }
+.sp-details li { display: grid; grid-template-columns: 9.5rem 1fr; gap: 10px; padding: 9px 14px; border-bottom: 1px solid var(--border); font-size: 0.97rem; }
+.sp-details li:last-child { border-bottom: none; }
+.sp-details li > span:first-child { font-weight: 700; color: var(--navy); }
+.sp-callout {
+  margin-top: 20px; padding: 16px 18px; border-radius: var(--radius-sm);
+  background: #fff7e0; border: 2px solid var(--gold-dk); color: var(--text); font-size: 1.02rem;
+}
+.sp-callout strong { color: #8a1c1c; }
+.sp-actions { margin-top: 22px; }
+.sp-link-secondary {
+  display: inline-flex; align-items: center; font-family: var(--font-head); font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); padding: 13px 6px;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.sp-link-secondary:hover { color: var(--navy); }
+.sp-small { font-size: 0.86rem; color: var(--gray); margin-top: 12px; }
+
+/* ── MLBA Winter player registration ── */
+.sp-returning {
+  display: grid; grid-template-columns: 1fr; gap: 14px; align-items: center;
+  background: var(--navy); color: var(--white); border-radius: var(--radius); padding: 22px;
+  border-left: 6px solid var(--green);
+}
+.sp-returning h3 { font-family: var(--font-head); text-transform: uppercase; font-size: 1.35rem; font-weight: 800; }
+.sp-returning p { color: var(--text-inv); margin-top: 6px; }
+.sp-returning p strong { color: var(--white); }
+.sp-new-head { font-family: var(--font-head); text-transform: uppercase; color: var(--navy); font-size: 1.35rem; font-weight: 800; margin: 34px 0 6px; }
+.sp-offers { list-style: none; display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 14px; }
+.sp-offer { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; display: flex; flex-direction: column; }
+.sp-offer h4 { font-family: var(--font-head); text-transform: uppercase; color: var(--navy); font-size: 1.15rem; line-height: 1.15; }
+.sp-offer .sp-price { font-family: var(--font-head); font-weight: 800; font-size: 1.6rem; color: var(--navy); margin-top: 6px; }
+.sp-offer .sp-who { font-weight: 600; color: var(--teal); font-size: 0.93rem; margin-top: 2px; }
+.sp-offer p { color: var(--gray); font-size: 0.93rem; margin: 8px 0 16px; }
+.sp-offer .btn { margin-top: auto; }
+.sp-keydates { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 12px; font-size: 0.97rem; }
+.sp-keydates b { color: var(--navy); }
+
+/* ── Winter League (outside teams) ── */
+.sp-league { display: grid; grid-template-columns: 1fr; gap: 20px; }
+.sp-league-card { background: var(--surface); border: 1px solid var(--border); border-left: 6px solid var(--gold); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+.sp-league-card h3 { font-family: var(--font-head); text-transform: uppercase; color: var(--navy); font-size: 1.3rem; }
+.sp-league-card p, .sp-league-card li { color: var(--gray); font-size: 0.96rem; }
+.sp-league-card ul { margin: 10px 0 0 18px; }
+.sp-league-card .btn { margin-top: 16px; }
+
+@media (min-width: 620px) {
+  .sp-offers { grid-template-columns: 1fr 1fr; }
+  .sp-returning { grid-template-columns: 1fr auto; padding: 26px 28px; }
+}
+@media (min-width: 900px) {
+  .sp-paths { grid-template-columns: repeat(3, 1fr); }
+  .sp-swish-grid { grid-template-columns: minmax(300px, 440px) 1fr; gap: 44px; }
+  .sp-flyer { margin: 0; }
+  .sp-league { grid-template-columns: 1.4fr 1fr; }
+}
+@media (min-width: 1100px) {
+  .sp-offers { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 479px) {
+  .sp-details li { grid-template-columns: 6.6rem 1fr; padding: 8px 12px; font-size: 0.94rem; }
+  .sp-actions .btn-primary { width: 100%; }
+}
+@media (max-width: 339px) {
+  .sp-details li { grid-template-columns: 1fr; gap: 0; }
+}
+.sp-vh { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+/* Seasonal blocks only: a deeper brand green so white button text meets WCAG AA (4.5:1). The site-wide .btn-primary is unchanged. */
+.sp-path .btn-primary, .sp-section .btn-primary { background: #237a27; }
+.sp-path .btn-primary:hover, .sp-section .btn-primary:hover { background: #1d6b21; }
