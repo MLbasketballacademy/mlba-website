@@ -76,6 +76,8 @@ The permanent design and the standard page content are unchanged; seasonal mater
 **Retire one promotion:** delete its marked block or option card. On `leagues-tournaments.html`, restore the
 tournament placeholder card and wording from the pre-seasonal commit.
 
+**Closed-registration status (not seasonal):** lines marked `STATUS` in `pathways.html`, `academy.html` and `team-registration.html` (and the removed Fall outside-team button on `leagues-tournaments.html`) mark Fall 2026 registration as closed. Keep them when removing seasonal blocks; a whole-file `git checkout 20309b6` would bring back the closed Fall buttons.
+
 **Restore the standard pages exactly:** `git checkout 20309b6 -- index.html pathways.html leagues-tournaments.html`
 (the commit before the seasonal work). When no page uses `.sp-` markup, delete `css/seasonal-promo.css`,
 `images/seasonal/` and `files/swishmas/`.
