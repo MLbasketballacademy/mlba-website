@@ -132,6 +132,28 @@ GoDaddy DNS.
 2. Commit and push to GitHub.
 3. GitHub Pages publishes automatically within ~1 minute.
 
+### League schedule changes (version check)
+
+Every change to the schedule in `fall-league-schedule.html` (between `SCHEDULE:START` and `SCHEDULE:END` —
+dates, gyms, addresses, times, matchups, scores) must also update its version, or pages already open on
+phones will not pick it up:
+
+```
+node scripts/schedule-version.mjs
+```
+
+This updates the `schedule-version` / `schedule-published` meta tags in the page and `schedule-version.json`
+(a hash of the schedule plus the publish time). Commit all three together. The `schedule-version` GitHub
+check fails a PR or push whose schedule changed without it (`node scripts/schedule-version.mjs --check`).
+
+How open pages update (`js/league-schedule.js`): the page compares its own version with
+`schedule-version.json` on load, when it becomes visible again, when the browser comes back online, and
+about every 2 minutes while visible (never from the browser cache). Only a different version reloads it,
+keeping the selected team and date, and not within 8 seconds of someone using a filter; a "Schedule updated"
+notice shows the publish date and time. GitHub Pages' CDN caches files for up to 10 minutes and ignores query
+strings, so an open page can take up to ~10 minutes after a publish to update; if a reload still gets the old
+page it retries every ~2 minutes (5 tries), then asks the visitor to refresh. A failed check changes nothing.
+
 ## Contact form
 
 The contact form has **no backend**. On submit it opens the visitor's email client
