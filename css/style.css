@@ -748,9 +748,9 @@ footer {
    Outside team registration + League Communities (scoped to this update)
    ============================================================ */
 
-/* Fall 2026 deadline callout inside the page banner — gold on navy, an announcement not an error */
+/* Registration status + deadline callout inside the page banner — gold on navy, an announcement not an error */
 .page-banner .reg-deadline {
-  display: inline-block; max-width: 100%; margin-top: 20px; padding: 12px 18px;
+  display: block; width: fit-content; max-width: 100%; margin-top: 20px; padding: 12px 18px;
   border: 1px solid rgba(245,166,35,0.6); border-radius: var(--radius-sm);
   background: rgba(245,166,35,0.14); color: var(--white); line-height: 1.35;
 }
@@ -762,6 +762,9 @@ footer {
   font-family: var(--font-head); font-size: 1.35rem; font-weight: 800; letter-spacing: 0.02em;
   color: var(--gold); white-space: nowrap;
 }
+
+/* Banner button that jumps to the embedded form */
+.page-banner .reg-banner-actions { margin-top: 20px; }
 
 /* Moses Lake family pointer at the end of the Before You Begin card */
 .reg-family-cta {

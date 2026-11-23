@@ -76,7 +76,7 @@ The permanent design and the standard page content are unchanged; seasonal mater
 **Retire one promotion:** delete its marked block or option card. On `leagues-tournaments.html`, restore the
 tournament placeholder card and wording from the pre-seasonal commit.
 
-**Closed-registration status (not seasonal):** lines marked `STATUS` in `pathways.html`, `academy.html` and `team-registration.html` (and the removed Fall outside-team button on `leagues-tournaments.html`) mark Fall 2026 registration as closed. Keep them when removing seasonal blocks; a whole-file `git checkout 20309b6` would bring back the closed Fall buttons.
+**Registration status (not seasonal):** lines marked `STATUS` in `pathways.html` and `academy.html` mark Fall 2026 player registration as closed. Lines marked `STATUS` in `team-registration.html` and `leagues-tournaments.html` mark Winter 2027 outside-team registration as open (closes December 28, 2026); the homepage Winter League option card says the same. Update all of them when Winter outside-team registration closes. Keep them when removing seasonal blocks; a whole-file `git checkout 20309b6` would bring back the closed Fall buttons.
 
 **Restore the standard pages exactly:** `git checkout 20309b6 -- index.html pathways.html leagues-tournaments.html`
 (the commit before the seasonal work). When no page uses `.sp-` markup, delete `css/seasonal-promo.css`,
@@ -101,7 +101,8 @@ tournament placeholder card and wording from the pre-seasonal commit.
   Zoho resizes the iframe to fit the form so the page scrolls normally. The form collects
   registration details only: **no payment is taken**, MLBA reviews each submission, and approved
   teams receive a separate payment request. The form is **only for teams outside Moses Lake**
-  (Fall 2026 deadline: October 7, 2026); Moses Lake families register each player individually
+  (currently Winter 2027 League only, January 9 – February 20, 2027, Saturdays; deadline December 28, 2026;
+  the Zoho form lists Winter 2027 as its only season); Moses Lake families register each player individually
   through an MLBA player offering (`pathways.html`). The "Start Outside Team Registration" button on
   `leagues-tournaments.html` links here. Roster corrections go to
   `league@mlbasketballacademy.org`. Change the form itself in Zoho, not in this repo.
