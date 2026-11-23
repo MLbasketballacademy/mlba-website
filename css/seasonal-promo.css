@@ -54,6 +54,7 @@
   letter-spacing: 0.08em; font-size: 0.74rem; padding: 2px 8px; border-radius: 6px; margin-right: 4px;
 }
 .sp-status--soon { background: #fff1d6; color: #7a4a00; }
+.sp-status--open { background: #dcf3e3; color: #14532d; }
 
 /* ── Shared section shell ── */
 .sp-section { padding: 48px 0; background: var(--surface); position: relative; }
